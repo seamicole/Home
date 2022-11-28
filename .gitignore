@@ -1,0 +1,7 @@
+# Ignore everything by default
+*
+
+# Track only the following
+!.gitignore
+!README.md
+!install.sh
