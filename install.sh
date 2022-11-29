@@ -54,6 +54,9 @@ wget "drive.google.com/u/3/uc?id=1Bq5jCFAoAtIgx9atcynw27uM2WuMZ19z&export=downlo
 # Install Upwork from .deb file
 sudo dpkg -i ./upwork.deb
 
+# Ensure dependencies are met
+sudo apt install -fy
+
 # Delete the Upwork .deb file
 sudo rm -rf ./upwork.deb
 
