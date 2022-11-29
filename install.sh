@@ -48,9 +48,8 @@ sudo rm -rf ./google-chrome-stable_current_amd64.deb
 # │ DESKTOP SIDEBAR
 # └─────────────────────────────────────────────────────────────────────────────────────
 
-sudo gsettings set org.gnome.shell favorite-apps "[\
+gsettings set org.gnome.shell favorite-apps "[\
 	'google-chrome.desktop', \
 	'org.gnome.Nautilus.desktop', \
 	'org.gnome.Terminal.desktop', \
-	'firefox.desktop'\
 	]"
