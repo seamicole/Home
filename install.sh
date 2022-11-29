@@ -45,11 +45,25 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 sudo rm -rf ./google-chrome-stable_current_amd64.deb
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ UPWORK
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Download Upwork .deb file
+sudo wget https://upwork-usw2-desktopapp.upwork.com/binaries/v5_8_0_24_aef0dc8c37cf46a8/upwork_5.8.0.24_amd64.deb
+
+# Install Upwork from .deb file
+sudo apt install ./upwork_5.8.0.24_amd64.deb
+
+# Delete the Upwork .deb file
+sudo rm -rf ./upwork_5.8.0.24_amd64.deb
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ DESKTOP SIDEBAR
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 gsettings set org.gnome.shell favorite-apps "[\
 	'google-chrome.desktop', \
+	'upwork.desktop', \
 	'org.gnome.Nautilus.desktop', \
 	'org.gnome.Terminal.desktop'\
 	]"
