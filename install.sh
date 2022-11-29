@@ -36,7 +36,10 @@ sudo apt install vim-gtk -y  # So "+y can be used to yank to clipboard
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Download Google Chrome .deb file
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 # Install Google Chrome from .deb file
 sudo apt install ./google-chrome-stable_current_amd64.deb
+
+# Delete the Google Chrome .deb file
+sudo rm -rf ./google-chrome-stable_current_amd64.deb
