@@ -36,7 +36,7 @@ sudo apt install vim-gtk -y  # So "+y can be used to yank to clipboard
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Download Google Chrome .deb file
-sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 # Install Google Chrome from .deb file
 sudo apt install ./google-chrome-stable_current_amd64.deb
@@ -49,10 +49,10 @@ sudo rm -rf ./google-chrome-stable_current_amd64.deb
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Download Upwork .deb file
-sudo wget "drive.google.com/u/3/uc?id=1Bq5jCFAoAtIgx9atcynw27uM2WuMZ19z&export=download&confirm=yes" --no-check-certificate -O upwork.deb
+wget "drive.google.com/u/3/uc?id=1Bq5jCFAoAtIgx9atcynw27uM2WuMZ19z&export=download&confirm=yes" --no-check-certificate -O upwork.deb
 
 # Install Upwork from .deb file
-sudo apt install ./upwork.deb
+sudo dpkg -i ./upwork.deb
 
 # Delete the Upwork .deb file
 sudo rm -rf ./upwork.deb
