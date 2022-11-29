@@ -5,14 +5,14 @@
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Set git upstream branch to main
-git branch --set-upstream-to=origin/main
+cd ~/ && git branch --set-upstream-to=origin/main
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ UPDATE AND UPGRADE
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Run apt update and upgrade
-sudo apt update && apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ TLP
@@ -51,5 +51,5 @@ sudo rm -rf ./google-chrome-stable_current_amd64.deb
 gsettings set org.gnome.shell favorite-apps "[\
 	'google-chrome.desktop', \
 	'org.gnome.Nautilus.desktop', \
-	'org.gnome.Terminal.desktop', \
+	'org.gnome.Terminal.desktop'\
 	]"
