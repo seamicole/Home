@@ -49,7 +49,7 @@ sudo rm -rf ./google-chrome-stable_current_amd64.deb
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Download Upwork .deb file
-sudo wget https://upwork-usw2-desktopapp.upwork.com/binaries/v5_8_0_24_aef0dc8c37cf46a8/upwork_5.8.0.24_amd64.deb
+sudo wget https://drive.google.com/file/d/1Bq5jCFAoAtIgx9atcynw27uM2WuMZ19z/view?usp=share_link -O upwork_5.8.0.24_amd64.deb
 
 # Install Upwork from .deb file
 sudo apt install ./upwork_5.8.0.24_amd64.deb
