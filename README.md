@@ -8,7 +8,7 @@ The following steps should be taken upon a fresh install of **Ubuntu 22.04.1 LTS
 Install git with the following command:
 
 ```bash
-sudo apt install git
+sudo apt install git -y
 ```
 
 ## Cloning The Repository
@@ -44,5 +44,5 @@ sudo chmod +x ~/install.sh && bash ~/install.sh
 Or simply copy, paste, and run this one-liner:
 
 ```bash
-sudo apt install git && cd ~/ && git init && git remote add origin https://github.com/seamicole/home.git && git pull origin main --allow-unrelated-histories && sudo chmod +x ~/install.sh && bash ~/install.sh
+sudo apt install git -y && cd ~/ && git init && git remote add origin https://github.com/seamicole/home.git && git pull origin main --allow-unrelated-histories && sudo chmod +x ~/install.sh && bash ~/install.sh
 ```
