@@ -74,6 +74,12 @@ sudo apt autoremove -y
 gsettings set org.gnome.shell favorite-apps "[\
 	'google-chrome.desktop', \
 	'upwork.desktop', \
-	'org.gnome.Nautilus.desktop', \
-	'org.gnome.Terminal.desktop'\
+	'org.gnome.Nautilus.desktop'\
 	]"
+	
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ AVATAR
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Set avatar
+sudo cp ~/Pictures/avatars/semicolon/semicolon-white.png ~/.face

@@ -8,4 +8,4 @@
 
 # Track only the following subdirectories
 !*/
-!Pictures/Avatars/**
+!Pictures/avatars/**
