@@ -1,7 +1,11 @@
 # Ignore everything by default
 *
 
-# Track only the following
+# Track only the following files
 !.gitignore
 !README.md
 !install.sh
+
+# Track only the following subdirectories
+!*/
+!Pictures/Avatars/**
