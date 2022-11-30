@@ -22,7 +22,7 @@ cd ~/ && git init
 Add the remote repository to your home directory:
 
 ```bash
-git remote add origin https://github.com/seamicole/home.git
+git remote add origin https://github.com/seamicole/Home.git
 ```
 
 Pull the remote repository into your home directory:
@@ -44,5 +44,5 @@ sudo chmod +x ~/install.sh && bash ~/install.sh
 Or simply copy, paste, and run this one-liner:
 
 ```bash
-sudo apt install git -y && cd ~/ && git init && git remote add origin https://github.com/seamicole/home.git && git pull origin main --allow-unrelated-histories && sudo chmod +x ~/install.sh && bash ~/install.sh
+sudo apt install git -y && cd ~/ && git init && git remote add origin https://github.com/seamicole/Home.git && git pull origin main --allow-unrelated-histories && sudo chmod +x ~/install.sh && bash ~/install.sh
 ```
