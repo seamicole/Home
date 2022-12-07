@@ -31,6 +31,9 @@ sudo apt install vim -y
 # Install vim-gtk
 sudo apt install vim-gtk -y  # So "+y can be used to yank to clipboard
 
+# Install Vim Plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ TLP
 # └─────────────────────────────────────────────────────────────────────────────────────
