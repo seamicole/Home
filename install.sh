@@ -11,6 +11,12 @@ git config --global user.name "Sean O'Leary"
 # Set git upstream branch to main
 cd ~/ && git branch --set-upstream-to=origin/main
 
+# Set remote to use SSH
+git remote set-url origin git@github.com:seamicole/Home.git
+
+# Rename current branch from master to main
+git branch -m master main
+
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ UPDATE AND UPGRADE
 # └─────────────────────────────────────────────────────────────────────────────────────
