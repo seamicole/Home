@@ -1,8 +1,12 @@
 #!/bin/bash
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ GIT UPSTREAM
+# │ GIT SETTINGS
 # └─────────────────────────────────────────────────────────────────────────────────────
+
+# Set git user email and user name 
+git config --global user.email "seamicole@gmail.com"
+git config --global user.name "Sean O'Leary"
 
 # Set git upstream branch to main
 cd ~/ && git branch --set-upstream-to=origin/main
@@ -130,10 +134,13 @@ google-chrome
 gh auth login --web --git-protocol ssh
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ COMPLETION MESSAGE
+# │ REBOOT
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Print completion message
 echo
-echo "System installation complete!"
+echo "System installation complete -- rebooting!"
 echo
+
+# Reboot computer
+sudo reboot

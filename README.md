@@ -36,7 +36,7 @@ git pull origin main --allow-unrelated-histories
 Execute the install script:
 
 ```bash
-sudo chmod +x ~/install.sh && bash ~/install.sh
+bash ~/install.sh
 ```
 
 ## Running A One-liner
@@ -44,5 +44,5 @@ sudo chmod +x ~/install.sh && bash ~/install.sh
 Or simply copy, paste, and run this one-liner:
 
 ```bash
-sudo apt install git -y && cd ~/ && git init && git remote add origin https://github.com/seamicole/Home.git && git pull origin main --allow-unrelated-histories && sudo chmod +x ~/install.sh && bash ~/install.sh
+sudo apt install git -y && cd ~/ && git init && git remote add origin https://github.com/seamicole/Home.git && git pull origin main --allow-unrelated-histories && bash ~/install.sh
 ```

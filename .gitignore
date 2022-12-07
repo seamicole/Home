@@ -8,5 +8,4 @@
 !.vimrc
 
 # Track only the following subdirectories
-!*/
 !Pictures/avatars/**
