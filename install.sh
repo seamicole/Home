@@ -8,14 +8,17 @@
 git config --global user.email "seamicole@gmail.com"
 git config --global user.name "Sean O'Leary"
 
-# Set git upstream branch to main
-cd ~/ && git branch --set-upstream-to=origin/main
-
-# Set remote to use SSH
-git remote set-url origin git@github.com:seamicole/Home.git
+# Navigate to Home directory
+cd ~/
 
 # Rename current branch from master to main
 git branch -m master main
+
+# Set git upstream branch to main
+git branch --set-upstream-to=origin/main
+
+# Set remote to use SSH
+git remote set-url origin git@github.com:seamicole/Home.git
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ UPDATE AND UPGRADE
