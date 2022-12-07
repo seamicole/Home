@@ -20,6 +20,8 @@ git branch --set-upstream-to=origin/main
 # Set remote to use SSH
 git remote set-url origin git@github.com:seamicole/Home.git
 
+# ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ UPDATE AND UPGRADE
 # └─────────────────────────────────────────────────────────────────────────────────────
