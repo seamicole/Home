@@ -15,11 +15,11 @@ cd ~/ && git branch --set-upstream-to=origin/main
 sudo apt update && sudo apt upgrade -y
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ TLP
+# │ CURL
 # └─────────────────────────────────────────────────────────────────────────────────────
 
-# Install TLP battery manager
-sudo apt install tlp tlp-rdw -y
+# Install curl
+sudo apt install curl -y
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ VIM
@@ -30,6 +30,13 @@ sudo apt install vim -y
 
 # Install vim-gtk
 sudo apt install vim-gtk -y  # So "+y can be used to yank to clipboard
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ TLP
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Install TLP battery manager
+sudo apt install tlp tlp-rdw -y
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ GOOGLE CHROME
@@ -61,6 +68,17 @@ sudo apt install -fy
 sudo rm -rf ./upwork.deb
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ GITHUB CLI
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Install GitHub CLI
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ APT AUTOREMOVE
 # └─────────────────────────────────────────────────────────────────────────────────────
 
@@ -85,11 +103,34 @@ gsettings set org.gnome.shell favorite-apps "[\
 sudo cp ~/Pictures/avatars/semicolon/semicolon-white.png ~/.face
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ SIGN IN: GOOGLE CHROME
+# │ REPOS DIRECTORY
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Create Repos directory
+mkdir ~/Repos
+
+# Add Repos directory to Nautilus bookmarks
+echo "file:///home/Repos" >> ~/.config/gtk-3.0/bookmarks
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ LOGIN: GOOGLE CHROME
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Open Google Chrome
 google-chrome
 
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ LOGIN: GITHUB CLI
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Login to GitHub CLI
+gh auth login --web --git-protocol ssh
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ COMPLETION MESSAGE
+# └─────────────────────────────────────────────────────────────────────────────────────
+
 # Print completion message
+echo
 echo "System installation complete!"
+echo
