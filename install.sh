@@ -76,10 +76,20 @@ gsettings set org.gnome.shell favorite-apps "[\
 	'upwork.desktop', \
 	'org.gnome.Nautilus.desktop'\
 	]"
-	
+
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ AVATAR
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Set avatar
 sudo cp ~/Pictures/avatars/semicolon/semicolon-white.png ~/.face
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ SIGN IN: GOOGLE CHROME
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Open Google Chrome
+google-chrome
+
+# Print completion message
+echo "System installation complete!"
