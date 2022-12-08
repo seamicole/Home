@@ -12,6 +12,13 @@ set nobackup
 " Disable writing to swap file
 set noswapfile
 
+" Enable persisting undos across sessions
+if has('persistent_undo')
+  silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  set undodir=~/.vim/backups
+  set undofile
+endif
+
 " ┌─────────────────────────────────────────────────────────────────────────────────────
 " │ VIM PLUG
 " └─────────────────────────────────────────────────────────────────────────────────────
@@ -37,10 +44,10 @@ Plug 'psf/black', { 'branch': 'stable' }
 
 " GIT ----------------------------------------------------------------------------------
 
-" Git gutter
+" Git Gutter
 Plug 'airblade/vim-gitgutter'
 
-" Vim fugitive
+" Vim Fugitive
 Plug 'tpope/vim-fugitive'
 
 " --------------------------------------------------------------------------------------
@@ -75,12 +82,22 @@ if (empty($TMUX))
 endif
 
 " ┌─────────────────────────────────────────────────────────────────────────────────────
-" │ PRODUCTIVITY SETTINGS
+" │ NERDTREE SETTINGS
 " └─────────────────────────────────────────────────────────────────────────────────────
 
-" Enable persisting undos across sessions
-if has('persistent_undo')
-  silent !mkdir ~/.vim/backups > /dev/null 2>&1
-  set undodir=~/.vim/backups
-  set undofile
-endif
+" Remap NERDTree toggle
+map <C-t> :NERDTreeToggle<CR>
+
+" Open NERDTree automatically when vim starts
+autocmd vimenter * NERDTree | wincmd p
+
+" Configure tree settings
+let NERDTreeShowHidden = 1
+let g:NERDTreeDirArrows = 0
+let g:NERDTreeNodeDelimiter = "\u00a0"
+
+" Close vim if NERDTree is the only remaining window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Define NERDTree ignore
+let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.swh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '.DS_Store']
