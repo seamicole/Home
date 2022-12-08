@@ -8,14 +8,11 @@
 git config --global user.email "seamicole@gmail.com"
 git config --global user.name "Sean O'Leary"
 
-# Navigate to Home directory
-cd ~/
-
 # Set git upstream branch to main
-git branch --set-upstream-to=origin/main
+cd ~/ && git branch --set-upstream-to=origin/main
 
 # Set remote to use SSH
-git remote set-url origin git@github.com:seamicole/Home.git
+cd ~/ && git remote set-url origin git@github.com:seamicole/Home.git
 
 # ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
