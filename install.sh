@@ -4,15 +4,12 @@
 # │ GIT SETTINGS
 # └─────────────────────────────────────────────────────────────────────────────────────
 
-# Set git user email and user name 
+# Set git user email and user name
 git config --global user.email "seamicole@gmail.com"
 git config --global user.name "Sean O'Leary"
 
 # Navigate to Home directory
 cd ~/
-
-# Rename current branch from master to main
-git branch -m master main
 
 # Set git upstream branch to main
 git branch --set-upstream-to=origin/main

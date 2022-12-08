@@ -13,10 +13,10 @@ sudo apt install git -y
 
 ## Cloning The Repository
 
-Navigate to your home directory and initialize a git repository:
+Navigate to your home directory and initialize a git repository under branch "main":
 
 ```bash
-cd ~/ && git init
+cd ~/ && git init -b main
 ```
 
 Add the remote repository to your home directory:
@@ -44,5 +44,5 @@ bash ~/install.sh
 Or simply copy, paste, and run this one-liner:
 
 ```bash
-sudo apt install git -y && cd ~/ && git init && git remote add origin https://github.com/seamicole/Home.git && git pull origin main --allow-unrelated-histories && bash ~/install.sh
+sudo apt install git -y && cd ~/ && git init -b main && git remote add origin https://github.com/seamicole/Home.git && git pull origin main --allow-unrelated-histories && bash ~/install.sh
 ```
