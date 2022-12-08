@@ -46,3 +46,13 @@ Or simply copy, paste, and run this one-liner:
 ```bash
 sudo apt install git -y && cd ~/ && git init -b main && git remote add origin https://github.com/seamicole/Home.git && git pull origin main --allow-unrelated-histories && bash ~/install.sh
 ```
+
+## Cheatsheets
+
+### Bash
+
+Unzip all files in current directory into directories with the same name:
+
+```bash
+for i in *.zip; do unzip "$i" -d "${i%%.zip}"; done
+```
