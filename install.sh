@@ -140,7 +140,7 @@ google-chrome
 gh auth login --web --git-protocol ssh
 
 # Add GitHub SSH key to known hosts
-echo "yes" | ssh -T git@github.com
+ssh -T git@github.com
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ REBOOT
