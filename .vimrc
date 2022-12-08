@@ -5,6 +5,13 @@
 " Disable compatibility with vi which can cause unexpected issues
 set nocompatible
 
+" Disable writing backup files
+set nowb
+set nobackup
+
+" Disable writing to swap file
+set noswapfile
+
 " ┌─────────────────────────────────────────────────────────────────────────────────────
 " │ VIM PLUG
 " └─────────────────────────────────────────────────────────────────────────────────────

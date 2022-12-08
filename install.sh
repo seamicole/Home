@@ -14,8 +14,6 @@ cd ~/ && git branch --set-upstream-to=origin/main
 # Set remote to use SSH
 cd ~/ && git remote set-url origin git@github.com:seamicole/Home.git
 
-# ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ UPDATE AND UPGRADE
 # └─────────────────────────────────────────────────────────────────────────────────────
@@ -125,7 +123,7 @@ sudo cp ~/Pictures/avatars/semicolon/semicolon-white.png ~/.face
 mkdir ~/Repos
 
 # Add Repos directory to Nautilus bookmarks
-echo "file:///home/Repos" >> ~/.config/gtk-3.0/bookmarks
+echo "file://$HOME/Repos" >> ~/.config/gtk-3.0/bookmarks
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ LOGIN: GOOGLE CHROME
@@ -140,6 +138,9 @@ google-chrome
 
 # Login to GitHub CLI
 gh auth login --web --git-protocol ssh
+
+# Add GitHub SSH key to known hosts
+echo yes | ssh -T git@github.com
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ REBOOT
