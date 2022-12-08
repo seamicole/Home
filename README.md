@@ -1,9 +1,12 @@
 # Home
-A repository for persistent setup and configuration files in the Linux home directory
+
+A repository for persistent setup and configuration files in the Linux home directory.
+
+## Post Installer
 
 The following steps should be taken upon a fresh install of **Ubuntu 22.04.1 LTS or later**.
 
-## Installing Git
+### Installing Git
 
 Install git with the following command:
 
@@ -11,7 +14,7 @@ Install git with the following command:
 sudo apt install git -y
 ```
 
-## Cloning The Repository
+### Cloning The Repository
 
 Navigate to your home directory and initialize a git repository under branch "main":
 
@@ -31,7 +34,7 @@ Pull the remote repository into your home directory:
 git pull origin main --allow-unrelated-histories
 ```
 
-## Running The Installer
+### Running The Installer
 
 Execute the install script:
 
@@ -39,7 +42,7 @@ Execute the install script:
 bash ~/install.sh
 ```
 
-## Running A One-liner
+### Running A One-liner
 
 Or simply copy, paste, and run this one-liner:
 
