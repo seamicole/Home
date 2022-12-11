@@ -101,3 +101,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Define NERDTree ignore
 let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.swh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '.DS_Store']
+
+" ┌─────────────────────────────────────────────────────────────────────────────────────
+" │ KEY MAPPINGS
+" └─────────────────────────────────────────────────────────────────────────────────────
+
+" Remap ctrl + s to save from normal mode
+nmap <c-s> :w<CR>
+
+" Remap ctrl + s to escape and save from insert mode
+imap <c-s> <Esc>:w<CR>i
