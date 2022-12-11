@@ -103,6 +103,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.swh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '.DS_Store']
 
 " ┌─────────────────────────────────────────────────────────────────────────────────────
+" │ ULTISNIPS SETTINGS
+" └─────────────────────────────────────────────────────────────────────────────────────
+
+" Define UltiSnips custom snippet directory
+let g:UltiSnipsSnippetDirectories=['ulti-snips']
+
+" ┌─────────────────────────────────────────────────────────────────────────────────────
 " │ KEY MAPPINGS
 " └─────────────────────────────────────────────────────────────────────────────────────
 

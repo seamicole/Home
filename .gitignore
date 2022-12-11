@@ -9,3 +9,4 @@
 
 # Track only the following subdirectories
 !Pictures/avatars/**
+!.vim/ulti-snips/**

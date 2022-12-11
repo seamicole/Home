@@ -1,0 +1,52 @@
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ GLOBAL PYTHON FUNCTIONS
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+global !p
+def hr(top=False, bottom=False, indent=None):
+    indent = indent if indent is not None else int(vim.eval("indent('.')"))
+    return (
+				"# "
+        + ("┌" if top else "└" if bottom else "─")
+        + (85 - indent) * "─"
+    )
+
+endglobal
+
+global !p
+def heading(h):
+    h = h or ""
+    indent = int(vim.eval("indent('.')"))
+    headings = {
+				"di": "django imports",
+				"dri": "django rest framework imports",
+				"gi": "general imports",
+				"pi": "project imports",
+    }
+    heading = headings.get(h.lower(), h).upper().strip()
+    heading = f"{indent * ' '}# │ {heading}"
+    heading = (
+				f"{hr(top=True, indent=indent)}\n"
+				f"{heading}\n"
+				f"{indent * ' '}{hr(bottom=True, indent=indent)}"
+    )
+    return heading
+endglobal
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ HEADING
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+snippet "!([\w\s]+)"  "A Python comment heading" br
+`!p snip.rv = heading(match.group(1))`
+
+$0
+endsnippet
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ KWARG
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+snippet "([\w]+)="  "An autocomplete feature for kwargs" r
+`!p snip.rv = f"{match.group(1)}={match.group(1)}"`$0
+endsnippet
