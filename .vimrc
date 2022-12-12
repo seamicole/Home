@@ -117,4 +117,4 @@ let g:UltiSnipsSnippetDirectories=['ulti-snips']
 nmap <c-s> :w<CR>
 
 " Remap ctrl + s to escape and save from insert mode
-imap <c-s> <Esc>:w<CR>i
+imap <c-s> <Esc>:w<CR>
