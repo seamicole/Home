@@ -45,6 +45,17 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 vim +'PlugInstall --sync' +qa
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ GITHUB CLI
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Install GitHub CLI
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ TLP
 # └─────────────────────────────────────────────────────────────────────────────────────
 
@@ -81,22 +92,28 @@ sudo apt install -fy
 sudo rm -rf ./upwork.deb
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ GITHUB CLI
-# └─────────────────────────────────────────────────────────────────────────────────────
-
-# Install GitHub CLI
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
-&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
-&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-&& sudo apt update \
-&& sudo apt install gh -y
-
-# ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ APT AUTOREMOVE
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Run apt autoremove
 sudo apt autoremove -y
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ REPOS DIRECTORY
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Create Repos directory
+mkdir ~/Repos
+
+# Add Repos directory to Nautilus bookmarks
+echo "file://$HOME/Repos" >> ~/.config/gtk-3.0/bookmarks
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ BASH ALIASES
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Add an external source file to .bashrc for aliases
+echo -e "\n# Add an external source file for aliases\nif [ -f ~/.bashrc_aliases ]; then\nsource ~/.bashrc_aliases\nfi" >> ~/.bashrc
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ DESKTOP SIDEBAR
@@ -114,16 +131,6 @@ gsettings set org.gnome.shell favorite-apps "[\
 
 # Set avatar
 sudo cp ~/Pictures/avatars/semicolon/semicolon-white.png ~/.face
-
-# ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ REPOS DIRECTORY
-# └─────────────────────────────────────────────────────────────────────────────────────
-
-# Create Repos directory
-mkdir ~/Repos
-
-# Add Repos directory to Nautilus bookmarks
-echo "file://$HOME/Repos" >> ~/.config/gtk-3.0/bookmarks
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ LOGIN: GOOGLE CHROME
