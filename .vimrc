@@ -26,7 +26,7 @@ endif
 " Initialize vim-plug
 call plug#begin('~/.vim/plugged')
 
-" UI -----------------------------------------------------------------------------------
+" UI ───────────────────────────────────────────────────────────────────────────────────
 
 " Gruvbox
 Plug 'morhetz/gruvbox'
@@ -37,12 +37,15 @@ Plug 'vim-airline/vim-airline'
 " NERDTree
 Plug 'preservim/nerdtree'
 
-" FORMATTING ---------------------------------------------------------------------------
+" FORMATTING / LINTING  ────────────────────────────────────────────────────────────────
+
+" ALE
+Plug 'dense-analysis/ale'
 
 " Python Black
 Plug 'psf/black', { 'branch': 'stable' }
 
-" GIT ----------------------------------------------------------------------------------
+" GIT ──────────────────────────────────────────────────────────────────────────────────
 
 " Git Gutter
 Plug 'airblade/vim-gitgutter'
@@ -50,13 +53,45 @@ Plug 'airblade/vim-gitgutter'
 " Vim Fugitive
 Plug 'tpope/vim-fugitive'
 
-" --------------------------------------------------------------------------------------
+" ──────────────────────────────────────────────────────────────────────────────────────
 
 " Uninitialize vim-plug
 call plug#end()
 
 " ┌─────────────────────────────────────────────────────────────────────────────────────
-" │ UI SETTINGS
+" │ ALE SETTINGS
+" └─────────────────────────────────────────────────────────────────────────────────────
+
+" Define ALE linters
+let g:ale_linters = {
+\    'python': ['flake8'],
+\}
+
+" Define ALE fixers
+let g:ale_fixers = {
+\    '*': ['remove_trailing_lines', 'trim_whitespace'],
+\    'python': [],
+\}
+
+" Ensure ALE runs fixers on save
+let g:ale_fix_on_save = 1
+
+" Set ALE signs
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '●'
+
+" Set Python Flake8 max line length
+let g:ale_python_flake8_options = '--max-line-length 88'
+
+" ┌─────────────────────────────────────────────────────────────────────────────────────
+" │ BLACK SETTINGS
+" └─────────────────────────────────────────────────────────────────────────────────────
+
+" Trigger Black on save of .py files
+autocmd BufWritePre *.py execute ':Black'
+
+" ┌─────────────────────────────────────────────────────────────────────────────────────
+" │ GRUVBOX SETTINGS
 " └─────────────────────────────────────────────────────────────────────────────────────
 
 " Set Gruvbox colorscheme

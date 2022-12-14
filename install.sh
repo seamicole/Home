@@ -53,11 +53,24 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl -y
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ INSTALL TLP
+# │ INSTALL PIP AND CORE LIBRARIES
 # └─────────────────────────────────────────────────────────────────────────────────────
 
-# Install TLP battery manager
-sudo apt install tlp tlp-rdw -y
+# Install pip for Python 3
+sudo apt install python3-pip -y
+
+# Install Black
+pip3 install black
+
+# Install Flake8
+pip3 install flake8
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ INSTALL POETRY
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Download and set up Poetry using the custom installer
+curl -sSL https://install.python-poetry.org | python3 -
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ INSTALL VIM
@@ -66,8 +79,9 @@ sudo apt install tlp tlp-rdw -y
 # Install Vim
 sudo apt install vim -y
 
-# Install vim-gtk
-sudo apt install vim-gtk -y  # So "+y can be used to yank to clipboard
+# Install python3-venv
+# Necessary for using Black as a Vim dependency
+sudo apt install python3-venv -y
 
 # Install Vim Plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -75,12 +89,15 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 # Run PlugInstall
 vim +'PlugInstall --sync' +qa
 
+# Install vim-gtk
+sudo apt install vim-gtk -y  # So "+y can be used to yank to clipboard
+
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ INSTALL POETRY
+# │ INSTALL TLP
 # └─────────────────────────────────────────────────────────────────────────────────────
 
-# Download and set up Poetry using the custom installer
-curl -sSL https://install.python-poetry.org | python3 -
+# Install TLP battery manager
+sudo apt install tlp tlp-rdw -y
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ INSTALL GOOGLE CHROME
