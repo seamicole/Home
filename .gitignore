@@ -8,8 +8,6 @@
 !.bashrc_aliases
 !.vimrc
 
-!*/
-
 # Track only the following nested files
 !.config/flake8
 
