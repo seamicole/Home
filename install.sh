@@ -76,6 +76,13 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 vim +'PlugInstall --sync' +qa
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ INSTALL POETRY
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Download and set up Poetry using the custom installer
+curl -sSL https://install.python-poetry.org | python3 -
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ INSTALL GOOGLE CHROME
 # └─────────────────────────────────────────────────────────────────────────────────────
 
