@@ -1,50 +1,72 @@
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ GLOBAL PYTHON FUNCTIONS
+# │ FUNCTION: HRULE
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 global !p
-def hr(top=False, bottom=False, indent=None):
-    indent = indent if indent is not None else int(vim.eval("indent('.')"))
-    return (
-				"# "
-        + ("┌" if top else "└" if bottom else "─")
-        + (85 - indent) * "─"
-    )
+def hrule(top=False, bottom=False, indent=None):
+    """Returns a horizontal rule string"""
 
+    # Get indent
+    indent = indent if indent is not None else int(vim.eval("indent('.')"))
+
+    # Get start character
+    start_char = "┌" if top else "└" if bottom else "─"
+
+    # Return horizontal rule
+    return "# " + start_char + (85 - indent) * "─"
 endglobal
 
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ FUNCTION: HEADING
+# └─────────────────────────────────────────────────────────────────────────────────────
+
 global !p
-def heading(h):
-    h = h or ""
+def heading(string):
+    """Returns a heading string"""
+
+    # Get indent
     indent = int(vim.eval("indent('.')"))
+
+    # Initialize string
+    string = string or ""
+
+    # Define headings map
     headings = {
-				"di": "django imports",
-				"dri": "django rest framework imports",
 				"gi": "general imports",
 				"pi": "project imports",
     }
-    heading = headings.get(h.lower(), h).upper().strip()
+
+    # Get heading from headings map
+    heading = headings.get(string.lower(), string)
+
+    # Uppercase and strip heading
+    heading = heading.upper().strip()
+
+    # Create heading string
     heading = f"{indent * ' '}# │ {heading}"
+
+    # Add a horizontal rule above and below the heading string
     heading = (
-				f"{hr(top=True, indent=indent)}\n"
+				f"{hrule(top=True, indent=indent)}\n"
 				f"{heading}\n"
-				f"{indent * ' '}{hr(bottom=True, indent=indent)}"
+				f"{indent * ' '}{hrule(bottom=True, indent=indent)}"
     )
+
+    # Return the heading
     return heading
 endglobal
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ HEADING
+# │ SNIPPET: HEADING
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 snippet "!([\w\s]+)"  "A Python comment heading" br
 `!p snip.rv = heading(match.group(1))`
-
 $0
 endsnippet
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ KWARG
+# │ SNIPPET: AUTOCOMPLETE KWARG
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 snippet "([\w]+)="  "An autocomplete feature for kwargs" r
