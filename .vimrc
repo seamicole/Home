@@ -1,5 +1,5 @@
 " ┌─────────────────────────────────────────────────────────────────────────────────────
-" │ CORE SETTINGS
+" │ FILE SETTINGS
 " └─────────────────────────────────────────────────────────────────────────────────────
 
 " Disable compatibility with vi which can cause unexpected issues
@@ -18,6 +18,16 @@ if has('persistent_undo')
   set undodir=~/.vim/backups
   set undofile
 endif
+
+" ┌─────────────────────────────────────────────────────────────────────────────────────
+" │ DISPLAY SETTINGS
+" └─────────────────────────────────────────────────────────────────────────────────────
+
+# Display line numbers
+set number
+
+" Display a vertical line
+let &colorcolumn = "88"
 
 " ┌─────────────────────────────────────────────────────────────────────────────────────
 " │ VIM PLUG
