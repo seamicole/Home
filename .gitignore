@@ -2,15 +2,17 @@
 *
 
 # Track only the following files
-!.gitignore
 !README.md
+!.gitignore
 !install.sh
 !.bashrc_aliases
 !.vimrc
+
+!*/
 
 # Track only the following nested files
 !.config/flake8
 
 # Track only the following subdirectories
-!Pictures/avatars/**
 !.vim/ulti-snips/**
+!Pictures/avatars/**
