@@ -127,9 +127,9 @@ sudo apt autoremove -y
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 gsettings set org.gnome.shell favorite-apps "[\
+	'org.gnome.Nautilus.desktop'\
 	'google-chrome.desktop', \
 	'upwork.desktop', \
-	'org.gnome.Nautilus.desktop'\
 	]"
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
