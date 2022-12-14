@@ -23,7 +23,7 @@ endif
 " │ DISPLAY SETTINGS
 " └─────────────────────────────────────────────────────────────────────────────────────
 
-# Display line numbers
+" Display line numbers
 set number
 
 " Display a vertical line
