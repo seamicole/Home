@@ -112,6 +112,9 @@ wget "drive.google.com/u/3/uc?id=1QeJSv1W3mOysyQV53p4kH7vJNemLuqNO&export=downlo
 # Extract zip file into a temporary command-configure directory
 mkdir command-configure && tar -xf command-configure.tar.gz -C command-configure
 
+# Delete the Command Configure zip file
+sudo rm -rf ./command-configure.tar.gz
+
 # Get file paths
 file_paths=(./command-configure/*)
 
@@ -122,9 +125,6 @@ do
     # Install the .deb file
     sudo dpkg -i ${file_paths[i]}
 done
-
-# Delete the Command Configure zip file
-sudo rm -rf ./command-configure.tar.gz
 
 # Delete the temporary command-configure directory
 sudo rm -rf ./command-configure
