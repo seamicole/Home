@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ GIT SETTINGS
+# │ CONFIGURE GIT
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Set git user email and user name
@@ -15,6 +15,30 @@ cd ~/ && git branch --set-upstream-to=origin/main
 cd ~/ && git remote set-url origin git@github.com:seamicole/Home.git
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ SET AVATAR
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Set avatar
+sudo cp ~/Pictures/avatars/semicolon/semicolon-white.png ~/.face
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ CREATE REPOS DIRECTORY
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Create Repos directory
+mkdir ~/Repos
+
+# Add Repos directory to Nautilus bookmarks
+echo "file://$HOME/Repos" >> ~/.config/gtk-3.0/bookmarks
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ CONFIGURE BASH ALIASES
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Add an external source file to .bashrc for aliases
+echo -e "\n# Add an external source file for aliases\nif [ -f ~/.bashrc_aliases ]; then\nsource ~/.bashrc_aliases\nfi" >> ~/.bashrc
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ UPDATE AND UPGRADE
 # └─────────────────────────────────────────────────────────────────────────────────────
 
@@ -22,14 +46,21 @@ cd ~/ && git remote set-url origin git@github.com:seamicole/Home.git
 sudo apt update && sudo apt upgrade -y
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ CURL
+# │ INSTALL CURL
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Install curl
 sudo apt install curl -y
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ VIM
+# │ INSTALL TLP
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Install TLP battery manager
+sudo apt install tlp tlp-rdw -y
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ INSTALL VIM
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Install Vim
@@ -45,25 +76,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 vim +'PlugInstall --sync' +qa
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ GITHUB CLI
-# └─────────────────────────────────────────────────────────────────────────────────────
-
-# Install GitHub CLI
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
-&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
-&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-&& sudo apt update \
-&& sudo apt install gh -y
-
-# ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ TLP
-# └─────────────────────────────────────────────────────────────────────────────────────
-
-# Install TLP battery manager
-sudo apt install tlp tlp-rdw -y
-
-# ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ GOOGLE CHROME
+# │ INSTALL GOOGLE CHROME
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Download Google Chrome .deb file
@@ -76,7 +89,7 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 sudo rm -rf ./google-chrome-stable_current_amd64.deb
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ UPWORK
+# │ INSTALL UPWORK
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Download Upwork .deb file
@@ -92,31 +105,25 @@ sudo apt install -fy
 sudo rm -rf ./upwork.deb
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ APT AUTOREMOVE
+# │ INSTALL GITHUB CLI
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Install GitHub CLI
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ AUTOREMOVE PACKAGES
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Run apt autoremove
 sudo apt autoremove -y
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ REPOS DIRECTORY
-# └─────────────────────────────────────────────────────────────────────────────────────
-
-# Create Repos directory
-mkdir ~/Repos
-
-# Add Repos directory to Nautilus bookmarks
-echo "file://$HOME/Repos" >> ~/.config/gtk-3.0/bookmarks
-
-# ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ BASH ALIASES
-# └─────────────────────────────────────────────────────────────────────────────────────
-
-# Add an external source file to .bashrc for aliases
-echo -e "\n# Add an external source file for aliases\nif [ -f ~/.bashrc_aliases ]; then\nsource ~/.bashrc_aliases\nfi" >> ~/.bashrc
-
-# ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ DESKTOP SIDEBAR
+# │ CUSTOMIZE DESKTOP SIDEBAR
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 gsettings set org.gnome.shell favorite-apps "[\
@@ -126,21 +133,14 @@ gsettings set org.gnome.shell favorite-apps "[\
 	]"
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ AVATAR
-# └─────────────────────────────────────────────────────────────────────────────────────
-
-# Set avatar
-sudo cp ~/Pictures/avatars/semicolon/semicolon-white.png ~/.face
-
-# ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ LOGIN: GOOGLE CHROME
+# │ LOGIN TO GOOGLE CHROME
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Open Google Chrome
 google-chrome
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ LOGIN: GITHUB CLI
+# │ LOGIN TO GITHUB CLI
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Login to GitHub CLI
@@ -150,7 +150,7 @@ gh auth login --web --git-protocol ssh
 ssh -T git@github.com
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ REBOOT
+# │ REBOOT SYSTEM
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Print completion message
