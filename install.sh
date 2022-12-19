@@ -103,31 +103,33 @@ sudo apt install tlp tlp-rdw -y
 # │ INSTALL DELL COMMAND CONFIGURE
 # └─────────────────────────────────────────────────────────────────────────────────────
 
+# Disable Command Configure for now since it does not work on Ubuntu 22.04
+
 # Ensure in home directory
-cd ~/
+#cd ~/
 
 # Download Dell Command Configure zip file
-wget "drive.google.com/u/3/uc?id=1QeJSv1W3mOysyQV53p4kH7vJNemLuqNO&export=download&confirm=yes" --no-check-certificate -O command-configure.tar.gz
+#wget "drive.google.com/u/3/uc?id=1QeJSv1W3mOysyQV53p4kH7vJNemLuqNO&export=download&confirm=yes" --no-check-certificate -O command-configure.tar.gz
 
 # Extract zip file into a temporary command-configure directory
-mkdir command-configure && tar -xf command-configure.tar.gz -C command-configure
+#mkdir command-configure && tar -xf command-configure.tar.gz -C command-configure
 
 # Delete the Command Configure zip file
-sudo rm -rf ./command-configure.tar.gz
+#sudo rm -rf ./command-configure.tar.gz
 
 # Get file paths
-file_paths=(./command-configure/*)
+#file_paths=(./command-configure/*)
 
 # Initialize for loop of files in reverse
 # Because we need to install the srvadmin file first
-for ((i = ${#file_paths[@]} - 1; i >= 0; i--))
-do
+#for ((i = ${#file_paths[@]} - 1; i >= 0; i--))
+#do
     # Install the .deb file
-    sudo dpkg -i ${file_paths[i]}
-done
+#    sudo dpkg -i ${file_paths[i]}
+#done
 
 # Delete the temporary command-configure directory
-sudo rm -rf ./command-configure
+#sudo rm -rf ./command-configure
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ INSTALL GOOGLE CHROME
