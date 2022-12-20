@@ -53,6 +53,19 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl -y
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ INSTALL RIPGREP
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Download Ripgrep .deb file
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
+
+# Install Ripgrep from .deb file
+sudo dpkg -i ./ripgrep_13.0.0_amd64.deb
+
+# Delete the Ripgrep .deb file
+sudo rm -rf ./ripgrep_13.0.0_amd64.deb
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ INSTALL PIP AND CORE LIBRARIES
 # └─────────────────────────────────────────────────────────────────────────────────────
 
@@ -182,6 +195,7 @@ sudo apt autoremove -y
 # │ CUSTOMIZE DESKTOP SIDEBAR
 # └─────────────────────────────────────────────────────────────────────────────────────
 
+# Assign desktop sidebar shortcuts
 gsettings set org.gnome.shell favorite-apps "[\
 	'org.gnome.Nautilus.desktop', \
 	'google-chrome.desktop', \
