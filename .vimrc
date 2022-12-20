@@ -55,6 +55,12 @@ Plug 'dense-analysis/ale'
 " Python Black
 Plug 'psf/black', { 'branch': 'stable' }
 
+" SEARCH ───────────────────────────────────────────────────────────────────────────────
+
+" fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 " GIT ──────────────────────────────────────────────────────────────────────────────────
 
 " Git Gutter
@@ -163,3 +169,9 @@ nmap <c-s> :w<CR>
 
 " Remap ctrl + s to escape and save from insert mode
 imap <c-s> <Esc>:w<CR>
+
+" Remap files command
+nnoremap <C-f> :Files<Cr>
+
+" Remap grep command
+nnoremap <C-g> :Rg<Cr>
