@@ -47,6 +47,11 @@ Plug 'vim-airline/vim-airline'
 " NERDTree
 Plug 'preservim/nerdtree'
 
+" SYNTAX HIGHLIGHTING  ─────────────────────────────────────────────────────────────────
+
+" Polyglot
+Plug 'sheerun/vim-polyglot'
+
 " FORMATTING / LINTING  ────────────────────────────────────────────────────────────────
 
 " ALE
@@ -152,6 +157,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Define NERDTree ignore
 let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.swh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '.DS_Store']
+
+" ┌─────────────────────────────────────────────────────────────────────────────────────
+" │ POLYGLOT SETTINGS
+" └─────────────────────────────────────────────────────────────────────────────────────
+
+" Disable annoying red highlighting for temporary space / tab errors in Python
+let g:python_highlight_space_errors = 1
 
 " ┌─────────────────────────────────────────────────────────────────────────────────────
 " │ ULTISNIPS SETTINGS
