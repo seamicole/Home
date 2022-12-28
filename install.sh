@@ -164,6 +164,9 @@ sudo rm -rf ./google-chrome-stable_current_amd64.deb
 # Install NordVPN
 sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
 
+# Configure NordVPN permissions
+sudo usermod -aG nordvpn $USER
+
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ INSTALL UPWORK
 # └─────────────────────────────────────────────────────────────────────────────────────
