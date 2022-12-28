@@ -158,6 +158,13 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 sudo rm -rf ./google-chrome-stable_current_amd64.deb
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ INSTALL NORDVPN
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Install NordVPN
+sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ INSTALL UPWORK
 # └─────────────────────────────────────────────────────────────────────────────────────
 
