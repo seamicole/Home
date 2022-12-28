@@ -1,6 +1,9 @@
 # Navigate to repo in Repos folder
 repo () { cd ~/Repos/ && cd "$@"; }
 
+# Navigate to repo in Repos folder and enter poetry shell
+repoetry () { repo "$@" && poetry shell; }
+
 # Use Page up and Page down to search through history
 bind '"\e[5~": history-search-backward'
 bind '"\e[6~": history-search-forward'
