@@ -163,7 +163,7 @@ let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp',
 " └─────────────────────────────────────────────────────────────────────────────────────
 
 " Disable annoying red highlighting for temporary space / tab errors in Python
-let g:python_highlight_space_errors = 1
+let g:python_highlight_space_errors = 0
 
 " ┌─────────────────────────────────────────────────────────────────────────────────────
 " │ ULTISNIPS SETTINGS
