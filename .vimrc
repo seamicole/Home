@@ -60,6 +60,11 @@ Plug 'dense-analysis/ale'
 " Python Black
 Plug 'psf/black', { 'branch': 'stable' }
 
+" AUTOCOMPLETION ───────────────────────────────────────────────────────────────────────
+
+" UltiSnips
+Plug 'SirVer/ultisnips'
+
 " SEARCH ───────────────────────────────────────────────────────────────────────────────
 
 " fzf
@@ -169,8 +174,11 @@ let g:python_highlight_space_errors = 0
 " │ ULTISNIPS SETTINGS
 " └─────────────────────────────────────────────────────────────────────────────────────
 
+" Set UltiSnips expand trigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+
 " Define UltiSnips custom snippet directory
-let g:UltiSnipsSnippetDirectories=['ulti-snips']
+let g:UltiSnipsSnippetDirectories = ['ulti-snips']
 
 " ┌─────────────────────────────────────────────────────────────────────────────────────
 " │ KEY MAPPINGS
