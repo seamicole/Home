@@ -183,6 +183,12 @@ let g:UltiSnipsSnippetDirectories = ['ulti-snips']
 " ┌─────────────────────────────────────────────────────────────────────────────────────
 " │ KEY MAPPINGS
 " └─────────────────────────────────────────────────────────────────────────────────────
+"
+" Remap files command
+nnoremap <C-f> :Files<Cr>
+
+" Remap grep command
+nnoremap <C-g> :Rg<Cr>
 
 " Remap ctrl + s to save from normal mode
 nmap <c-s> :w<CR>
@@ -190,8 +196,5 @@ nmap <c-s> :w<CR>
 " Remap ctrl + s to escape and save from insert mode
 imap <c-s> <Esc>:w<CR>
 
-" Remap files command
-nnoremap <C-f> :Files<Cr>
-
-" Remap grep command
-nnoremap <C-g> :Rg<Cr>
+" Remap ctrl + c to copy visual block to clipboard
+vmap <c-c> "+y
