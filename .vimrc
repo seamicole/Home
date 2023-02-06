@@ -90,7 +90,7 @@ call plug#end()
 
 " Define ALE linters
 let g:ale_linters = {
-\    'python': ['flake8'],
+\    'python': ['flake8', 'mypy'],
 \}
 
 " Define ALE fixers
@@ -108,6 +108,9 @@ let g:ale_sign_warning = '●'
 
 " Set Python Flake8 max line length
 let g:ale_python_flake8_options = '--max-line-length 88'
+
+" Set Python mypy to strict
+let g:ale_python_mypy_options = '--strict'
 
 " ┌─────────────────────────────────────────────────────────────────────────────────────
 " │ BLACK SETTINGS
