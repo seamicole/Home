@@ -79,6 +79,10 @@ Plug 'airblade/vim-gitgutter'
 " Vim Fugitive
 Plug 'tpope/vim-fugitive'
 
+" COPILOT ──────────────────────────────────────────────────────────────────────────────
+
+Plug 'github/copilot.vim'
+
 " ──────────────────────────────────────────────────────────────────────────────────────
 
 " Uninitialize vim-plug
