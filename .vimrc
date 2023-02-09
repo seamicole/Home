@@ -195,7 +195,9 @@ let g:UltiSnipsSnippetDirectories = ['ulti-snips']
 nnoremap <C-f> :Files<Cr>
 
 " Remap grep command
-nnoremap <C-g> :Rg<Cr>
+" This ensures that files are not opened in the NERDTree window
+" See https://github.com/junegunn/fzf/issues/453
+nnoremap <silent> <expr> <C-g> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Rg<Cr>"
 
 " Remap ctrl + s to save from normal mode
 nmap <c-s> :w<CR>
