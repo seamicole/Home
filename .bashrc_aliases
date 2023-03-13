@@ -11,3 +11,6 @@ bind '"\e[6~": history-search-forward'
 # Adjust charge limits to preserve battery health
 alias undock='sudo /opt/dell/dcc/cctk --primarybatterycfg=Adaptive'
 alias redock='sudo /opt/dell/dcc/cctk --primarybatterycfg=custom:70-80'
+
+# Create an alias for coverage and pytest
+alias covhtml='coverage run -m pytest && coverage html && xdg-open ./htmlcov/index.html'
