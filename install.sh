@@ -213,6 +213,13 @@ gsettings set org.gnome.shell favorite-apps "[\
 	]"
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ DISABLE AUTO SCREEN BRIGHTNESS
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Disable auto screen brightness
+gsettings set org.gnome.settings-daemon.plugins.power ambient-enabled false
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ LOGIN TO GOOGLE CHROME
 # └─────────────────────────────────────────────────────────────────────────────────────
 
