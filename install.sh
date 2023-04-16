@@ -256,7 +256,6 @@ ssh -T git@github.com
 # Install GitHub Copilot
 git clone https://github.com/github/copilot.vim.git ~/.vim/pack/github/start/copilot.vim
 
-
 # Setup GitHub Copilot
 vim +':Copilot setup' +qa
 
