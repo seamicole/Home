@@ -106,6 +106,20 @@ vim +'PlugInstall --sync' +qa
 sudo apt install vim-gtk -y  # So "+y can be used to yank to clipboard
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ INSTALL NODE.JS
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Install Node.js (pre-requisite for GitHub Copilot)
+sudo apt install nodejs
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ INSTALL GITHUB CO-PILOT
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Install GitHub Copilot
+git clone https://github.com/github/copilot.vim.git ~/.vim/pack/github/start/copilot.vim
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ INSTALL TLP
 # └─────────────────────────────────────────────────────────────────────────────────────
 
