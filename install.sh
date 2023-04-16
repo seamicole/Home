@@ -86,8 +86,21 @@ pip3 install flake8
 curl -sSL https://install.python-poetry.org | python3 -
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ INSTALL NODE.JS
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Specify Node.js source for v16 (minimum required for GitHub Copilot)
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+
+# Install Node.js (pre-requisite for GitHub Copilot)
+sudo apt install nodejs -y
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ INSTALL VIM
 # └─────────────────────────────────────────────────────────────────────────────────────
+
+# Add the latest PPA for Vim 9
+sudo add-apt-repository ppa:jonathonf/vim
 
 # Install Vim
 sudo apt install vim -y
@@ -104,20 +117,6 @@ vim +'PlugInstall --sync' +qa
 
 # Install vim-gtk
 sudo apt install vim-gtk -y  # So "+y can be used to yank to clipboard
-
-# ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ INSTALL NODE.JS
-# └─────────────────────────────────────────────────────────────────────────────────────
-
-# Install Node.js (pre-requisite for GitHub Copilot)
-sudo apt install nodejs
-
-# ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ INSTALL GITHUB CO-PILOT
-# └─────────────────────────────────────────────────────────────────────────────────────
-
-# Install GitHub Copilot
-git clone https://github.com/github/copilot.vim.git ~/.vim/pack/github/start/copilot.vim
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ INSTALL TLP
@@ -249,6 +248,17 @@ gh auth login --web --git-protocol ssh
 
 # Add GitHub SSH key to known hosts
 ssh -T git@github.com
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ INSTALL GITHUB CO-PILOT
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Install GitHub Copilot
+git clone https://github.com/github/copilot.vim.git ~/.vim/pack/github/start/copilot.vim
+
+
+# Setup GitHub Copilot
+vim +':Copilot setup' +qa
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ REBOOT SYSTEM
