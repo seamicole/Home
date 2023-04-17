@@ -185,7 +185,9 @@ sudo usermod -aG nordvpn $USER
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Download Upwork .deb file
-wget "drive.google.com/u/3/uc?id=1Bq5jCFAoAtIgx9atcynw27uM2WuMZ19z&export=download&confirm=yes" --no-check-certificate -O upwork.deb
+wget https://upwork-usw2-desktopapp.upwork.com/binaries/v5_8_0_24_aef0dc8c37cf46a8/upwork_5.8.0.24_amd64.deb \
+	--user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36" \
+	-O upwork.deb
 
 # Install Upwork from .deb file
 sudo dpkg -i ./upwork.deb
