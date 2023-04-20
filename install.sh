@@ -208,6 +208,13 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 && sudo apt install gh -y
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ INSTALL HEROKU CLI
+# └────────────────────────────────────────────────────────────────────────────────────
+
+# Install Heroku CLI
+curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ AUTOREMOVE PACKAGES
 # └─────────────────────────────────────────────────────────────────────────────────────
 
