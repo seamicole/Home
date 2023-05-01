@@ -245,6 +245,12 @@ sudo apt update
 # Install Docker Engine, containerd, and docker-compose
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
+# Add Docker group
+sudo groupadd docker
+
+# Add current user to Docker group
+sudo usermod -aG docker $USER
+
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ AUTOREMOVE PACKAGES
 # └─────────────────────────────────────────────────────────────────────────────────────
