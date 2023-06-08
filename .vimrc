@@ -191,7 +191,7 @@ let g:UltiSnipsSnippetDirectories = ['ulti-snips']
 " ┌─────────────────────────────────────────────────────────────────────────────────────
 " │ KEY MAPPINGS
 " └─────────────────────────────────────────────────────────────────────────────────────
-"
+
 " Remap files command
 nnoremap <C-f> :Files<Cr>
 
@@ -208,3 +208,10 @@ imap <c-s> <Esc>:w<CR>
 
 " Remap ctrl + c to copy visual block to clipboard
 vmap <c-c> "+y
+
+" ┌─────────────────────────────────────────────────────────────────────────────────────
+" │ FILE-SPECIFIC KEY MAPPINGS
+" └─────────────────────────────────────────────────────────────────────────────────────
+
+" Create a file-specific key mapping for compiling and running C files
+autocmd FileType c map <F8> :w <CR> :!gcc % -o %< && ./%< <CR>
