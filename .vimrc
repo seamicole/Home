@@ -213,5 +213,36 @@ vmap <c-c> "+y
 " │ FILE-SPECIFIC KEY MAPPINGS
 " └─────────────────────────────────────────────────────────────────────────────────────
 
+function! CompileRunC()
+
+    " Replace /*TEST with //TEST_START
+    %s/\/\*TEST/\/\/TEST_START/e
+
+    " Replace TEST*/ with //TEST_END
+    %s/TEST\*\//\/\/TEST_END/e
+
+    " Write the current file
+    silent write
+
+    " Silently compile the current file
+    silent exec '!cc -Wall -Wextra -Werror -o %:r %'
+
+    " Run the compiled file
+    exec '!./%:r'
+
+    " Delete the compiled file
+    silent exec '!rm %:r'
+
+    " Replace //TEST_START with /*TEST
+    %s/\/\/TEST_START/\/\*TEST/e
+
+    " Replace //TEST_END with TEST*/
+    %s/\/\/TEST_END/TEST\*\//e
+
+    " Write the current file
+    silent write
+
+endfunction
+
 " Create a file-specific key mapping for compiling and running C files
-autocmd FileType c map <F8> :w <CR> :!gcc % -o %< && ./%< <CR>
+autocmd FileType c nnoremap <F8> :call CompileRunC()<CR>
