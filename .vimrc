@@ -209,6 +209,42 @@ imap <c-s> <Esc>:w<CR>
 " Remap ctrl + c to copy visual block to clipboard
 vmap <c-c> "+y
 
+function! ToggleSidebar()
+
+  " Initialize variable for whether line numbers are enabled
+  let line_numbers_enabled = &number
+
+  " Check if line numbers are enabled
+  if line_numbers_enabled
+
+    " Disable line numbers
+    set nonumber
+
+    " Disable Git Gutter
+    GitGutterDisable
+
+    " Disable NERDTree
+    NERDTreeClose
+
+  " Otherwise, line numbers are disabled
+  else
+
+    " Enable NEERDTree
+    NERDTree | wincmd p
+
+    " Enable Git Gutter
+    GitGutterEnable
+
+    " Enable line numbers
+    set number
+
+  endif
+
+endfunction
+
+" Map F5 to toggle sidebar
+nnoremap <F5> :call ToggleSidebar()<CR>
+
 " ┌─────────────────────────────────────────────────────────────────────────────────────
 " │ FILE-SPECIFIC KEY MAPPINGS
 " └─────────────────────────────────────────────────────────────────────────────────────
