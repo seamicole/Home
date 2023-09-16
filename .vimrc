@@ -82,6 +82,10 @@ Plug 'tpope/vim-fugitive'
 " COPILOT ──────────────────────────────────────────────────────────────────────────────
 
 Plug 'github/copilot.vim'
+"
+" DEBUGGING  ───────────────────────────────────────────────────────────────────────────
+
+Plug 'puremourning/vimspector'
 
 " ──────────────────────────────────────────────────────────────────────────────────────
 
@@ -187,6 +191,24 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 
 " Define UltiSnips custom snippet directory
 let g:UltiSnipsSnippetDirectories = ['ulti-snips']
+
+" ┌─────────────────────────────────────────────────────────────────────────────────────
+" │ VIMSPECTOR SETTINGS
+" └─────────────────────────────────────────────────────────────────────────────────────
+
+" Enable Vimspector full variable display mode
+let g:vimspector_variables_display_mode = 'full'
+
+" Define Vimspector key mappings
+nnoremap <Leader>dd :call vimspector#Launch()<CR>
+nnoremap <Leader>de :call vimspector#Reset()<CR>
+nnoremap <Leader>df :call vimspector#Continue()<CR>
+nnoremap <Leader>ff :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <Leader>fr :call vimspector#ClearBreakpoints()<CR>
+nmap <Leader>ds <Plug>VimspectorRestart
+nmap <Leader>sa <Plug>VimspectorStepOut
+nmap <Leader>sd <Plug>VimspectorStepInto
+nmap <Leader>sw <Plug>VimspectorStepOver
 
 " ┌─────────────────────────────────────────────────────────────────────────────────────
 " │ KEY MAPPINGS
