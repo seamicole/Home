@@ -205,6 +205,7 @@ nnoremap <Leader>de :call vimspector#Reset()<CR>
 nnoremap <Leader>df :call vimspector#Continue()<CR>
 nnoremap <Leader>ff :call vimspector#ToggleBreakpoint()<CR>
 nnoremap <Leader>fr :call vimspector#ClearBreakpoints()<CR>
+nnoremap <leader>fg :VimspectorWatch<Space>
 nmap <Leader>ds <Plug>VimspectorRestart
 nmap <Leader>sa <Plug>VimspectorStepOut
 nmap <Leader>sd <Plug>VimspectorStepInto
