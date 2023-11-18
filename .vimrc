@@ -109,6 +109,8 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \    '*': ['remove_trailing_lines', 'trim_whitespace'],
 \    'python': [],
+\    'typescript': ['prettier', 'eslint'],
+\    'typescriptreact': ['prettier', 'eslint'],
 \}
 
 " Ensure ALE runs fixers on save
@@ -124,6 +126,10 @@ let g:ale_python_flake8_options = '--max-line-length 88'
 " Set Python mypy to strict
 " NOTE: --explicit-package-bases is needed for namespace packages
 let g:ale_python_mypy_options = '--strict --explicit-package-bases'
+
+" Set Javascript / Typescript options
+let g:ale_javascript_eslint_executable='npx eslint'
+let g:ale_javascript_prettier_options = '--print-width 88'
 
 " ┌─────────────────────────────────────────────────────────────────────────────────────
 " │ BLACK SETTINGS
