@@ -86,7 +86,11 @@ Plug 'tpope/vim-fugitive'
 " COPILOT ──────────────────────────────────────────────────────────────────────────────
 
 Plug 'github/copilot.vim'
-"
+
+" PREVIEW ──────────────────────────────────────────────────────────────────────────────
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
 " DEBUGGING  ───────────────────────────────────────────────────────────────────────────
 
 Plug 'puremourning/vimspector'
