@@ -282,6 +282,9 @@ endfunction
 " Map F5 to toggle sidebar
 nnoremap <F5> :call ToggleSidebar()<CR>
 
+" Map ctrl + e to bot term
+nnoremap <C-e> :bot term ++rows=10<CR>
+
 " ┌─────────────────────────────────────────────────────────────────────────────────────
 " │ FILE-SPECIFIC KEY MAPPINGS
 " └─────────────────────────────────────────────────────────────────────────────────────
