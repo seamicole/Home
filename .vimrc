@@ -66,6 +66,9 @@ Plug 'psf/black', { 'branch': 'stable' }
 
 " AUTOCOMPLETION ───────────────────────────────────────────────────────────────────────
 
+" CoC
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " UltiSnips
 Plug 'SirVer/ultisnips'
 
@@ -107,6 +110,8 @@ call plug#end()
 " Define ALE linters
 let g:ale_linters = {
 \    'python': ['flake8', 'mypy'],
+\   'typescript': ['eslint'],
+\   'typescriptreact': ['eslint'],
 \}
 
 " Define ALE fixers
@@ -195,6 +200,25 @@ let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp',
 
 " Disable annoying red highlighting for temporary space / tab errors in Python
 let g:python_highlight_space_errors = 0
+
+" ┌─────────────────────────────────────────────────────────────────────────────────────
+" │ COC SETTINGS
+" └─────────────────────────────────────────────────────────────────────────────────────
+
+" CoC extensions
+let g:coc_global_extensions = ['coc-pyright', 'coc-tsserver']
+
+" Remap keys for applying codeAction to the current line.
+nmap <leader>ac  <Plug>(coc-codeaction)
+
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " ┌─────────────────────────────────────────────────────────────────────────────────────
 " │ ULTISNIPS SETTINGS
