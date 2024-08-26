@@ -56,6 +56,9 @@ Plug 'preservim/nerdtree'
 " Polyglot
 Plug 'sheerun/vim-polyglot'
 
+" Rust syntax highlighting and tools
+Plug 'rust-lang/rust.vim'
+
 " FORMATTING / LINTING  ────────────────────────────────────────────────────────────────
 
 " ALE
@@ -71,6 +74,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " UltiSnips
 Plug 'SirVer/ultisnips'
+
+" rust-analyzer integration with CoC
+Plug 'fannheyward/coc-rust-analyzer', {'branch': 'release'}
 
 " SEARCH ───────────────────────────────────────────────────────────────────────────────
 
@@ -109,7 +115,8 @@ call plug#end()
 
 " Define ALE linters
 let g:ale_linters = {
-\    'python': ['flake8', 'mypy'],
+\   'python': ['flake8', 'mypy'],
+\   'rust': ['cargo'],
 \   'typescript': ['eslint'],
 \   'typescriptreact': ['eslint'],
 \}
@@ -118,6 +125,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \    '*': ['remove_trailing_lines', 'trim_whitespace'],
 \    'python': [],
+\    'rust': ['rustfmt'],
 \    'typescript': ['prettier', 'eslint'],
 \    'typescriptreact': ['prettier', 'eslint'],
 \}
@@ -140,12 +148,28 @@ let g:ale_python_mypy_options = '--strict --explicit-package-bases'
 let g:ale_javascript_eslint_executable='npx eslint'
 let g:ale_javascript_prettier_options = '--print-width 88'
 
+" Ensure ALE runs fixers on save for Rust
+autocmd BufWritePre *.rs ALEFix
+
 " ┌─────────────────────────────────────────────────────────────────────────────────────
 " │ BLACK SETTINGS
 " └─────────────────────────────────────────────────────────────────────────────────────
 
 " Trigger Black on save of .py files
 autocmd BufWritePre *.py execute ':Black'
+
+" ┌─────────────────────────────────────────────────────────────────────────────────────
+" │ RUSTFMT SETTINGS
+" └─────────────────────────────────────────────────────────────────────────────────────
+
+" Use rustfmt for autoformatting
+let g:rustfmt_autosave = 1
+
+" Enable syntax checking for Rust
+let g:rust_check_syntax = 1
+
+" Automatically run rustfmt when saving a file
+autocmd BufWritePre *.rs :RustFmt
 
 " ┌─────────────────────────────────────────────────────────────────────────────────────
 " │ GRUVBOX SETTINGS
@@ -206,7 +230,7 @@ let g:python_highlight_space_errors = 0
 " └─────────────────────────────────────────────────────────────────────────────────────
 
 " CoC extensions
-let g:coc_global_extensions = ['coc-pyright', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-pyright', 'coc-tsserver', 'coc-rust-analyzer']
 
 " Remap keys for applying codeAction to the current line.
 nmap <leader>ac  <Plug>(coc-codeaction)

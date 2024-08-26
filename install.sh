@@ -104,6 +104,22 @@ curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt install nodejs -y
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ INSTALL RUST
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Install Rustup and Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+source $HOME/.cargo/env
+rustup update stable
+
+# Install rust-analyzer
+rustup component add rust-analyzer
+
+# Make rust-analyzer accessible system-wide
+mkdir -p ~/.local/bin
+ln -s $(rustup which rust-analyzer) ~/.local/bin/rust-analyzer
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ INSTALL VIM
 # └─────────────────────────────────────────────────────────────────────────────────────
 
