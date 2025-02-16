@@ -1,0 +1,67 @@
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ FUNCTION: HRULE
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+global !p
+def hrule(top=False, bottom=False, indent=None):
+    """Returns a horizontal rule string"""
+
+    # Get indent
+    indent = indent if indent is not None else int(vim.eval("indent('.')"))
+
+    # Get start character
+    start_char = "┌" if top else "└" if bottom else "─"
+
+    # Return horizontal rule
+    return "// " + start_char + (84 - indent) * "─"
+endglobal
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ FUNCTION: HEADING
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+global !p
+def heading(string):
+    """Returns a heading string"""
+
+    # Get indent
+    indent = int(vim.eval("indent('.')"))
+
+    # Initialize string
+    string = string or ""
+
+    # Define headings map
+    headings = {
+				"gi": "general imports",
+				"ni": "next imports",
+				"pi": "project imports",
+    }
+
+    # Get heading from headings map
+    heading = headings.get(string.lower(), string)
+
+    # Uppercase and strip heading
+    heading = heading.upper().strip()
+
+    # Create heading string
+    heading = f"{indent * ' '}// │ {heading}"
+
+    # Add a horizontal rule above and below the heading string
+    heading = (
+				f"{hrule(top=True, indent=indent)}\n"
+				f"{heading}\n"
+				f"{indent * ' '}{hrule(bottom=True, indent=indent)}"
+    )
+
+    # Return the heading
+    return heading
+endglobal
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ SNIPPET: HEADING
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+snippet "!([\w\s]+)"  "A TypeScript comment heading" br
+`!p snip.rv = heading(match.group(1))`
+$0
+endsnippet
